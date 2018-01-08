@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DataAccessLayer
 {
     public class People
     {
-        string loginConnectionString = "Data Source=FULLMETAL;Initial Catalog=People;Integrated Security=True";
+        string loginConnectionString ;
+        public People(string ConnectionString)
+        {
+            loginConnectionString = ConnectionString;
+        }
         public int VerifyUser(string userName, string password)
         {
             if (userName != null && password != null)
