@@ -13,7 +13,7 @@ namespace DataAccessLayer
     {
         public List<PhoneBook> GetDetails()
         {
-            string phonebookCOnnectionstring="";
+            string phonebookCOnnectionstring= "Data Source=FULLMETAL;Initial Catalog=People;Integrated Security=True";
             List<PhoneBook> contactList = new List<PhoneBook>();
             SqlConnection getConnection = new SqlConnection(phonebookCOnnectionstring);
             SqlCommand getCommand = new SqlCommand("spGetNameAndNumber", getConnection);
